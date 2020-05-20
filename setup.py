@@ -7,7 +7,7 @@ from setuptools import find_packages
 name = 'parallel-utils'
 
 # https://www.python.org/dev/peps/pep-0440/#version-scheme
-version = '1.0.0rc1.dev0'
+version = '1.0.0rc1.dev2'
 
 description = 'This library implements a class Monitor, as defined by Per Brinch Hansen and C.A.R. Hoare, ' \
               'for synchronization and concurrent management of threads and processes in Python. It also provides other ' \
@@ -26,8 +26,8 @@ project_urls = {
     'Source': 'https://github.com/fernandoenzo/parallel-utils/',
 }
 
-packages = find_packages(exclude=("tests",))
-test_suite = 'tests'
+packages = find_packages(exclude=("*tests*",))
+test_suite = 'parallel_utils.tests'
 
 license = 'GPLv3+'
 

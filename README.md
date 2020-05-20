@@ -166,8 +166,8 @@ Note that **this decorator has its own namespace for uids**, which is completely
 
 #### Second example
 
-> &nbsp;2. It allows organizing a set of functions so that they follow a strict order in their execution, regardless of the
- thread from which they are called.
+> &nbsp;2. It organizes a set of functions so that they follow a strict order in their execution, regardless of the thread
+ from which they are called.
 
 To achieve this first goal, the Monitor class includes the following couple of functions:
 
