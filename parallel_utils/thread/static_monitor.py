@@ -27,7 +27,7 @@ def StaticMonitor():
             return p.monitor_static.lock_code(uid=uid, max_threads=max_threads)
 
         @staticmethod
-        def lock_priority_code(uid: Union[str, int], order: int = 1, total: int = 1):
+        def lock_priority_code(uid: Union[str, int], order: int = 1, total: int = None):
             p.monitor_static.lock_priority_code(uid=uid, order=order, total=total)
 
         @staticmethod
