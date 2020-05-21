@@ -2,7 +2,7 @@
 # encoding:utf-8
 
 
-import concurrent
+import concurrent.futures
 import time
 from unittest import TestCase, main
 
