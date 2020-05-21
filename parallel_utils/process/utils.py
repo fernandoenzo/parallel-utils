@@ -19,6 +19,5 @@ def create_process(func: Callable, *args: Any, **kwargs: Any) -> Future:
     '''
     tp = ProcessPoolExecutor(max_workers=1)
     future = tp.submit(func, *args, **kwargs)
-    shutdown = lambda fut: create_thread(tp.shutdown, wait=True)  # Necessary since wait=False is broken
-    future.add_done_callback(shutdown)
+    create_thread(tp.shutdown, wait=True)  # Necessary since wait=False is broken
     return future
