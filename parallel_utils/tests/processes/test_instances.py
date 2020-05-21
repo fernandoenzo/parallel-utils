@@ -46,6 +46,7 @@ class TestInstances(TestCase):
         t2 = time.time_ns()
         delta = (t2 - t1) * (10 ** -9)
         self.assertGreaterEqual(delta, 3)
+        self.assertLessEqual(delta, 3.5)
 
 
 if __name__ == '__main__':
