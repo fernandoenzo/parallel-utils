@@ -135,7 +135,7 @@ But, to simplify life for the programmer and for improving readability, there's 
 ```python
 from parallel_utils.thread import synchronized
 
-@synchronized
+@synchronized()
 def print_and_sleep():
     print('Hello')
     sleep(2)
@@ -148,7 +148,7 @@ Let's see the decorator prototype:
 @synchronized(max_threads: int = 1)
 ```
 
-As you can see, the `@synchronized` decorator doesn't need an identifier, and by default only allows one thread to access the
+As you can see, the `@synchronized` decorator doesn't need an identifier, and by default only allows one thread to enter the
  function at the same time. However, we can override that default behavior with the optional `max_threads` argument.
 
 If we want, for example, to allow up to two threads to enter the function at the same time, we only need to write:
