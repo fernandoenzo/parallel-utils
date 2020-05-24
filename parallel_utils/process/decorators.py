@@ -21,8 +21,9 @@ def synchronized(max_threads: int = 1):
         @wraps(func)
         def locked_func(*args, **kw_args):
             s.acquire()
-            func(*args, **kw_args)
+            res = func(*args, **kw_args)
             s.release()
+            return res
 
         return locked_func
 
@@ -45,8 +46,9 @@ def synchronized_priority(*args, **kwargs):
             @wraps(func)
             def locked_func(*args, **kw_args):
                 m.lock_priority_code(uid=uid, order=order, total=total)
-                func(*args, **kw_args)
+                res = func(*args, **kw_args)
                 m.unlock_code(uid=uid)
+                return res
 
             return locked_func
 
