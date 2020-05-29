@@ -7,7 +7,7 @@ from setuptools import find_packages
 name = 'parallel-utils'
 
 # https://www.python.org/dev/peps/pep-0440/#version-scheme
-version = '1.0.0rc4.dev0'
+version = '1.0.0'
 
 description = 'This library implements a class Monitor, as defined by Per Brinch Hansen and C.A.R. Hoare, ' \
               'for synchronization and concurrent management of threads and processes in Python. It also provides other ' \
@@ -33,7 +33,9 @@ license = 'GPLv3+'
 
 zip_safe = True
 
-keywords = 'concurrency distributed locker monitor parallel parallelism process thread semaphore synchronize'
+keywords = 'concurrency concurrent concurrent-programming distributed library lock locker locker-manager module monitor ' \
+           'multiprocess multiprocessing multithreading parallel parallelism process semaphore sync synchronize ' \
+           'synchronization thread threading'
 
 python_requires = '>=3.7'
 
