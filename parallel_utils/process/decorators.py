@@ -20,9 +20,15 @@ def synchronized(max_threads: int = 1):
     def locked(func):
         @wraps(func)
         def locked_func(*args, **kw_args):
+            exceptions = []
             s.acquire()
-            res = func(*args, **kw_args)
+            try:
+                res = func(*args, **kw_args)
+            except Exception as e:
+                exceptions.append(e)
             s.release()
+            if len(exceptions):
+                raise exceptions[0]
             return res
 
         return locked_func
@@ -45,9 +51,15 @@ def synchronized_priority(*args, **kwargs):
         def locked(func):
             @wraps(func)
             def locked_func(*args, **kw_args):
+                exceptions = []
                 m.lock_priority_code(uid=uid, order=order, total=total)
-                res = func(*args, **kw_args)
+                try:
+                    res = func(*args, **kw_args)
+                except Exception as e:
+                    exceptions.append(e)
                 m.unlock_code(uid=uid)
+                if len(exceptions):
+                    raise exceptions[0]
                 return res
 
             return locked_func
