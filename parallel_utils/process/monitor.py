@@ -92,7 +92,7 @@ def Monitor():
 
         def __setstate__(self, state):
             private = state.pop('private')
-            p.setstate(private, self)
+            p.setstate(self, private)
             self.__dict__ = state
 
         def __del__(self):
