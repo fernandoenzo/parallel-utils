@@ -6,8 +6,6 @@ from concurrent.futures._base import Future
 from concurrent.futures.process import ProcessPoolExecutor
 from typing import Callable, Any
 
-from parallel_utils.thread import create_thread
-
 
 def create_process(func: Callable, *args: Any, **kwargs: Any) -> Future:
     '''
@@ -19,5 +17,5 @@ def create_process(func: Callable, *args: Any, **kwargs: Any) -> Future:
     '''
     tp = ProcessPoolExecutor(max_workers=1)
     future = tp.submit(func, *args, **kwargs)
-    create_thread(tp.shutdown, wait=True)  # Necessary since wait=False is broken
+    tp.shutdown(wait=False)
     return future
