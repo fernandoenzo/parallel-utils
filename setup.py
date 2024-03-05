@@ -7,7 +7,7 @@ from setuptools import find_packages
 name = 'parallel-utils'
 
 # https://www.python.org/dev/peps/pep-0440/#version-scheme
-version = '1.2'
+version = '1.2.1'
 
 description = 'This library implements a class Monitor, as defined by Per Brinch Hansen and C.A.R. Hoare, ' \
               'for synchronization and concurrent management of threads and processes in Python. It also provides other ' \
@@ -52,6 +52,7 @@ classifiers = [
     'Programming Language :: Python :: 3 :: Only',
     'Programming Language :: Python :: 3.9',
     'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
     'Topic :: Software Development :: Libraries :: Python Modules',
 ]
 setuptools.setup(

@@ -8,7 +8,6 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fernandoenzo/parallel-utils)
 [![GitHub last commit](https://img.shields.io/github/last-commit/fernandoenzo/parallel-utils)](https://github.com/fernandoenzo/parallel-utils)
 [![Build Status](https://img.shields.io/travis/com/fernandoenzo/parallel-utils?label=tests)](https://travis-ci.com/fernandoenzo/parallel-utils)
-![Maintenance](https://img.shields.io/maintenance/yes/2022)
 
 This library implements a class [**Monitor**](https://en.wikipedia.org/wiki/Monitor_(synchronization)), as defined by [**Per
  Brinch Hansen**](https://en.wikipedia.org/wiki/Per_Brinch_Hansen) and [**C.A.R. Hoare**](https://en.wikipedia.org/wiki/Tony_Hoare),
