@@ -28,7 +28,7 @@ def synchronized(max_threads: int = 1):
     return locked
 
 
-def synchronized_priority():
+def synchronized_priority(uid: Union[str, int], order: int = 1, total: int = None):
     m = Monitor()
 
     def synchronized_priority(uid: Union[str, int], order: int = 1, total: int = None):
@@ -56,4 +56,4 @@ def synchronized_priority():
     return synchronized_priority
 
 
-synchronized_priority = synchronized_priority()
+synchronized_priority = synchronized_priority(None, None, None)
