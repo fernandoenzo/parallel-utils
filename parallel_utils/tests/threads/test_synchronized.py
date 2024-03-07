@@ -12,8 +12,8 @@ from parallel_utils.thread import create_thread, synchronized
 class TestSynchronized(TestCase):
 
     @staticmethod
-    @synchronized(3)
-    def one_second_three_threads():
+    @synchronized(2)
+    def two_seconds_three_threads():
         time.sleep(1)
 
     @staticmethod
@@ -21,16 +21,16 @@ class TestSynchronized(TestCase):
     def three_seconds_three_threads():
         time.sleep(1)
 
-    def test_one_second_three_threads(self):
+    def test_two_seconds_three_threads(self):
         threads = []
         t1 = time.time_ns()
         for _ in range(3):
-            threads.append(create_thread(self.one_second_three_threads))
+            threads.append(create_thread(self.two_seconds_three_threads))
         concurrent.futures.wait(threads)
         t2 = time.time_ns()
         delta = (t2 - t1) * (10 ** -9)
-        self.assertGreaterEqual(delta, 1)
-        self.assertLessEqual(delta, 1.5)
+        self.assertGreaterEqual(delta, 2)
+        self.assertLessEqual(delta, 2.5)
 
     def test_three_seconds_three_threads(self):
         threads = []
