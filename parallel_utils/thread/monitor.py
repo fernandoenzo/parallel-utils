@@ -104,4 +104,5 @@ def Monitor():
     return Monitor
 
 
+StaticMonitor = Monitor()()
 Monitor = Monitor()
