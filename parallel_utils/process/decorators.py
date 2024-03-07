@@ -43,11 +43,8 @@ def synchronized_priority(uid: Union[str, int], order: int = 1, total: int = Non
         def locked(func):
             @wraps(func)
             def locked_func(*args, **kwargs):
-                m.lock_priority_code(uid=uid, order=order, total=total)
-                try:
+                with m.synchronized_priority(uid=uid, order=order, total=total):
                     return func(*args, **kwargs)
-                finally:
-                    m.unlock_code(uid=uid)
 
             return locked_func
 
