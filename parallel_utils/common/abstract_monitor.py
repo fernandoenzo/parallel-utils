@@ -42,7 +42,7 @@ class AbstractMonitor(ABC):
         raise NotImplementedError
 
     @contextmanager
-    def synchronized(self, uid: Union[str, int], max_threads: int):
+    def synchronized(self, uid: Union[str, int], max_threads: int = 1):
         '''
         Context manager for 'lock_code' function
         :param uid: Unique identifier for the code snippet.

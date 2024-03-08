@@ -80,7 +80,7 @@ def Monitor():
         def lock_code(self, uid: Union[str, int], max_threads: int = 1):
             lock_priority_code(self, uid=uid, order=1, total=1, max_threads=max_threads)
 
-        def lock_priority_code(self, uid: Union[str, int], order: int = 1, total: int = None):
+        def lock_priority_code(self, uid: Union[str, int], order: int, total: int = None):
             lock_priority_code(self, uid=uid, order=order, total=total, max_threads=1)
 
         def unlock_code(self, uid: Union[str, int]):
@@ -104,5 +104,5 @@ def Monitor():
     return Monitor
 
 
-StaticMonitor = Monitor()()
 Monitor = Monitor()
+StaticMonitor = Monitor()
